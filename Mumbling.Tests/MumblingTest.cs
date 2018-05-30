@@ -7,7 +7,7 @@ namespace Mumbling.Tests
     public class MumblingTest
     {
         [Test]
-        public void Test_EnteredOneLowerCaseLetter()
+        public void Test_Entered_x_ShouldReturn_X()
         {
             var accuml = new Accuml();
             var actual = accuml.Accum("x");
