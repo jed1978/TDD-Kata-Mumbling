@@ -31,5 +31,13 @@ namespace Mumbling.Tests
             var expected = "X-Bb";
             actual.ShouldBeEqualTo(expected);
         }
+
+        [Test]
+        public void Test_Entered_bnc_ShouldBe_B_Nn_Ccc()
+        {
+            var actual = _accuml.Accum("bnc");
+            var expected = "B-Nn-Ccc";
+            actual.ShouldBeEqualTo(expected);
+        }
     }
 }
