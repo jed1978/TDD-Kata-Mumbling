@@ -19,21 +19,11 @@ namespace Mumbling
 
             string accum;
 
-
-            if (s.Length == 2)
+            for (int i = 0; i < s.Length; i++)
             {
-                accumList.Add(ToUpper(accumCharArray[0]));
-                accumList.Add(ToUpper(accumCharArray[1]) + ToLower(accumCharArray[1]));
-                accum = string.Join("-", accumList);
+                accumList.Add(ToUpper(accumCharArray[i]) + new String(accumCharArray[i], i).ToLower());
             }
-            else
-            {
-                accumList.Add(ToUpper(accumCharArray[0]));
-                accumList.Add(ToUpper(accumCharArray[1]) + ToLower(accumCharArray[1]));
-                accumList.Add(ToUpper(accumCharArray[2]) + ToLower(accumCharArray[2]) + ToLower(accumCharArray[2]));
-
-                accum = string.Join("-", accumList);
-            }
+            accum = string.Join("-", accumList);
 
             return accum;
         }
