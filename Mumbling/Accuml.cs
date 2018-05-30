@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Mumbling
@@ -11,27 +12,30 @@ namespace Mumbling
             {
                 return s.ToUpper();
             }
-            else if (s.Length == 2)
+
+            char[] accumCharArray = s.ToCharArray();
+
+            List<string> accumList = new List<string>();
+
+            string accum;
+
+
+            if (s.Length == 2)
             {
-                var accumCharArray = s.ToCharArray();
-                var accumStringArray = new[]
-                {
-                    ToUpper(accumCharArray[0]),
-                    ToUpper(accumCharArray[1]) + ToLower(accumCharArray[1])
-                };
-                return string.Join("-", accumStringArray);
+                accumList.Add(ToUpper(accumCharArray[0]));
+                accumList.Add(ToUpper(accumCharArray[1]) + ToLower(accumCharArray[1]));
+                accum = string.Join("-", accumList);
             }
             else
             {
-                var accumCharArray = s.ToCharArray();
-                var accumStringArray = new[]
-                {
-                    ToUpper(accumCharArray[0]),
-                    ToUpper(accumCharArray[1]) + ToLower(accumCharArray[1]),
-                    ToUpper(accumCharArray[2]) + ToLower(accumCharArray[2]) + ToLower(accumCharArray[2])
-                };
-                return string.Join("-", accumStringArray);
+                accumList.Add(ToUpper(accumCharArray[0]));
+                accumList.Add(ToUpper(accumCharArray[1]) + ToLower(accumCharArray[1]));
+                accumList.Add(ToUpper(accumCharArray[2]) + ToLower(accumCharArray[2]) + ToLower(accumCharArray[2]));
+
+                accum = string.Join("-", accumList);
             }
+
+            return accum;
         }
 
         private static string ToLower(char accumChar)
