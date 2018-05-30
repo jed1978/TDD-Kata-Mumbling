@@ -7,18 +7,25 @@ namespace Mumbling
     {
         public string Accum(string s)
         {
-            if (s.Length > 1)
+            if (s.Length <= 1) return s.ToUpper();
+            var accumCharArray = s.ToCharArray();
+            var accumStringArray = new[]
             {
-                var accumCharArray = s.ToCharArray();
-                var accumStringArray = new[]
-                {
-                    accumCharArray[0].ToString().ToUpper(),
-                    accumCharArray[1].ToString().ToUpper() + accumCharArray[1].ToString().ToLower()
-                };
-                return String.Join("-", accumStringArray);
-            }
+                ToUpper(accumCharArray[0]),
+                ToUpper(accumCharArray[1]) + ToLower(accumCharArray[1])
+            };
+            return string.Join("-", accumStringArray);
 
-            return s.ToUpper();
+        }
+
+        private static string ToLower(char accumChar)
+        {
+            return accumChar.ToString().ToLower();
+        }
+
+        private static string ToUpper(char accumChar)
+        {
+            return accumChar.ToString().ToUpper();
         }
     }
 }
