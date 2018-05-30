@@ -39,5 +39,21 @@ namespace Mumbling.Tests
             var expected = "B-Nn-Ccc";
             actual.ShouldBeEqualTo(expected);
         }
+
+        [Test]
+        public void Test_Entered_GHF_ShouldBe_G_Hh_Fff()
+        {
+            var actual = _accuml.Accum("GHF");
+            var expected = "G-Hh-Fff";
+            actual.ShouldBeEqualTo(expected);
+        }
+
+        [Test]
+        public void Test_Entered_yUf_ShouldBe_Y_Uu_Fff()
+        {
+            var actual = _accuml.Accum("yUf");
+            var expected = "Y-Uu-Fff";
+            actual.ShouldBeEqualTo(expected);
+        }
     }
 }
