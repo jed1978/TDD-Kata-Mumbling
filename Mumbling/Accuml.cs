@@ -13,7 +13,7 @@ namespace Mumbling
                 var accumStringArray = new[]
                 {
                     accumCharArray[0].ToString().ToUpper(),
-                    accumCharArray[1].ToString().ToUpper() + accumCharArray[1]
+                    accumCharArray[1].ToString().ToUpper() + accumCharArray[1].ToString().ToLower()
                 };
                 return String.Join("-", accumStringArray);
             }

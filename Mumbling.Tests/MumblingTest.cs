@@ -24,6 +24,12 @@ namespace Mumbling.Tests
             actual.ShouldBeEqualTo(expected);
         }
 
-        
+        [Test]
+        public void Test_Entered_XB_ShouldBe_X_Bb()
+        {
+            var actual = _accuml.Accum("XB");
+            var expected = "X-Bb";
+            actual.ShouldBeEqualTo(expected);
+        }
     }
 }
