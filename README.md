@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/k1tp3k6rj17wueg0/branch/master?svg=true)](https://ci.appveyor.com/project/jed1978/tdd-kata-mumbling/branch/master)
+
 # TDD-Kata-Mumbling
 
 The examples below show you how to write function accum:
